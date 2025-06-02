@@ -30,7 +30,7 @@ const AudienceForm = () => {
   const handleCheckAudienceSize = async (values) => {
     console.log('Checking audience size...');
     try {
-      const response = await axios.post('http://localhost:3001/api/campaigns/check-audience-size', values);
+      const response = await axios.post('https://crm-server-qfv6.onrender.com/api/campaigns/check-audience-size', values);
       console.log('Audience size checked:', response.data.audienceSize);
       setAudienceSize(response.data.audienceSize);
     } catch (error) {
@@ -41,7 +41,7 @@ const AudienceForm = () => {
   const handleSubmit = async (values, { setSubmitting }) => {
     console.log('Submitting campaign...');
     try {
-      await axios.post('http://localhost:3001/api/campaigns/create-audience', values);
+      await axios.post('https://crm-server-qfv6.onrender.com/api/campaigns/create-audience', values);
       console.log('Campaign created successfully');
       alert('Campaign created successfully');
       navigate('/home/audience');
